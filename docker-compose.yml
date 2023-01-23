@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+  sickchill:
+    image: lscr.io/linuxserver/sickchill:latest
+    container_name: sickchill
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /mnt/d/sickchill/config:/config
+      - /mnt/e/Torresmo:/downloads
+      - /mnt/g/Seriados:/tv
+    ports:
+      - 8081:8081
+    restart: unless-stopped
